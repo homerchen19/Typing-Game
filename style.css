@@ -1,0 +1,92 @@
+body
+{ 
+	background-image: url(star.jpg);
+    -o-background-size:1920px 1200px;   /*x軸y軸寬高*/
+	-webkit-background-size:1920px 1200px; 
+    -moz-background-size:1920px 1200px;
+}
+
+#video{
+	
+	width:95%;
+	height:40%;
+}
+
+#canvas{
+
+	z-index:1;
+	background-color: #ffffff;
+	opacity:0.6;
+	height:73%;
+	border:4px solid black;
+	font-size:30px;
+	font-family: "Helvetica Neue", Helvetica, Arial, "微軟正黑體", sans-serif;
+
+	color:black;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+
+#div1{
+	float:left; 
+	width:35%;
+}
+#div2{
+	float:left; 
+	width:63%;
+}
+
+
+#word {
+	font-size:18px;
+	padding:10px;
+	width:300px;
+	margin: 0px auto;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#scoreBlocks {
+	float:left; 
+	width:95%;
+	margin: 0px auto;
+	background-color: red;
+	opacity:0.7;
+	position:relative;
+	height:25%;
+	border:4px solid black;
+	font-size:80px;
+	font-family: "Helvetica Neue", Helvetica, Arial, "微軟正黑體", sans-serif;
+	color:white;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+
+input#word{
+	display:block;
+}
+
+#pause
+{
+	width:100px;
+	height:50px;
+	font-size:25px;
+}
+
+#rank
+{
+	width:120px;
+	height:50px;
+	font-size:25px;
+}
+
+
+#continue
+{
+	width:100px;
+	height:50px;
+	font-size:25px;
+}

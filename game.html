@@ -1,0 +1,83 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>快打高手</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="word_game.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<style>
+	body{
+		font-family: "Helvetica Neue", Helvetica, Arial, "微軟正黑體", sans-serif;
+	}
+	h2{font-size:50; color:white;}
+	</style>
+
+	
+</head>
+<body>
+	<h2 align="center">快打高手 - 三星級</h2>
+        <hr>
+	<div>	
+		<div id="div1">
+			<div>
+				<video id="video" src="vedio.mp4" controls autoplay>
+
+            </video>
+
+			</div>
+			<br>
+			<div id="scoreBlocks">    
+				得分:<b id="score">0</b>
+				<div class="progress" >
+					<div id="persent1"></div>
+					<div id="persent2"></div>
+					<div id="persent3"></div>
+				</div>
+			</div>
+			
+		</div>
+		<div id="div2">
+			<div  id="canvas"></div>
+			<br>
+			<input type="text" id="word" name="word" placeholder="請在此打字" />
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<br>
+	<div class="header" align = "center">
+        <input type="button" class="btn btn-success pull-center" id="pause" value="暫停" onclick="pause()">
+		<input type="button" class="btn btn-danger pull-center" id="continue" value="繼續" onclick="continues()">
+		<a class="btn btn-large btn-warning" id="rank" href="RANK.html">
+			<span class="glyphicon glyphicon-list" aria-hidden="true"></span>排行榜 </a>
+    </div>
+	
+	<script type="text/javascript">
+		var placeLetterTimer;
+		var pause;
+		
+		function pause(){
+			clearInterval(placeLetterTimer);
+			video.pause();
+		}
+		function continues(){
+			video.play();
+			clearInterval(placeLetterTimer);
+			placeLetterTimer=setInterval("a.playGame()", 1000);
+		}
+		
+			var a = new PlayGround('canvas', 'word', 'score');
+
+			placeLetterTimer=setInterval("a.playGame()", 1000); //每1秒去call playGame()
+		
+			$(document).ready(function() //DOM加載完後執行
+			{	
+				$('#word').focus(); //輸入框獲得焦點
+				$('#word').on("keyup", function(){ //按按鍵後觸發
+					a.checkWord($('#word').val());
+				});
+			});
+		
+	</script>
+</body>
+</html>
